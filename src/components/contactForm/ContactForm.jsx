@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import style from './contactForm.module.css';
 
 const ContactForm = ({propOnSubmit})=> {
- 
   const [namePerson, setName] = useState('')
   const [number, setNumber]= useState('')
 
@@ -25,13 +24,13 @@ const ContactForm = ({propOnSubmit})=> {
   
   const onSubmit = e => {
     e.preventDefault();
-    propOnSubmit({name:namePerson, number:number})
+    propOnSubmit({name: namePerson, number: number})
     reset();
   };
 
   const reset = () => {
-setName('')
-setNumber('')
+    setName('')
+    setNumber('')
   };
 
     return (
@@ -73,8 +72,9 @@ setNumber('')
   }
 
 
-   // static propTypes = {
-  //   name: PropTypes.string,
-  //   number: PropTypes.string,
-  // };
+   ContactForm.propTypes = {
+    name: PropTypes.string,
+    number: PropTypes.string,
+};
+  
 export default ContactForm;
